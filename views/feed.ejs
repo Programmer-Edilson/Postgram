@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="descriprtion" content="">
+        <meta name="author" content="Programmer-Edilson">
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+        <link rel="stylesheet" href="/stylesheets/navbar.css" />
+        <link rel="stylesheet" href="/stylesheets/album.css" />
+        <link rel="stylesheet" href="/stylesheets/offcanvas.css" />
+        <title><%= title %></title>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <section>
+            <div role="navbar">
+                <nav class="navbar bg-light fixed-top navbar-light">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-start">
+                            <div style="margin-top: 8px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                            </div>
+                            <a class="navbar-brand" href="#"><strong>Postgram</strong><a/>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <img style="margin: 10px; margin-right: 0px" class="rounded-circle" src="./images/icons/profile-icon.jpg" alt="Generic placeholder image" width="35" height="35"/>
+                        <img style="margin: 10px; margin-left: 0px; margin-right: 0px" class="rounded-circle" src="./images/icons/menu.png" alt="Generic placeholder image" width="35" height="35"/>
+                    </div>
+               </nav>
+               <div style="margin-top: 60px" class="border-bottom bg-light fixed-top navbar-light">
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <img style="margin: 10px; width:20px; height:20px;" src="./images/icons/home.png"/>
+                        </div>
+                        <div>
+                            <img style="margin: 10px; width:20px; height:20px;" src="./images/icons/friends.png"/>
+                        </div>
+                        <div>
+                            <img style="margin: 10px; width:20px; height:20px;" src="./images/icons/message-icon.png"/>
+                        </div>
+                        <div>
+                            <img style="margin: 10px; width:20px; height:20px;" src="./images/icons/ringing.png"/>
+                        </div>
+                        <div>
+                            <img style="margin: 10px; width:20px; height:20px;" src="./images/icons/user-group.png"/>
+                        </div>
+                        <div>
+                            <img style="margin: 10px; width:20px; height:20px;" src="./images/icons/flag.png"/>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </section>
+
+        <section role="New Post" style="margin-top: 50px; margin-bottom: 10px;" >
+            <div class="container border-bottom" >
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img style="margin: 10px; margin-right: 0px" class="rounded-circle" src="./images/person-icon.png" alt="Generic placeholder image" width="40" height="40"/>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button onclick="document.getElementById('create-post').click()" style="padding: 8px; padding-left: 25px; padding-right: 25px; border-radius: 20px; font-size: 15px" type="button" class="btn btn-sm btn">Create a post...</button>
+                        <a href="/create" style="display: none;" id="create-post"></a>
+                    </div>
+                    <div style="margin-top: 10px">
+                        <img style="width:29px; height:40px;" src="./images/icons/image-icon.png"/>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 5px;" class="d-flex justify-content-around">
+                <div>
+                    <img style="width:16px; height:15px;" src="./images/icons/edit.png"/>
+                    <span>Text</span>
+                </div>
+                <div>
+                    <img style="width:16px; height:20px;" src="./images/icons/image-icon.png"/>
+                    <span>Photo<span>
+                </div>
+                <div>
+                    <img style="width:16px; height:16px;" src="./images/icons/map.png"/>
+                    <span>Location</span>
+                </div>
+            </div>
+        </section>
+
+        <section role="Histories">
+            <div style="margin-top: 10px; height: 150px"  class="nav-scroller bg-white box-shadow">
+                <nav style="height: 160px;"  class="nav nav-underline">
+                    <div style="height: 100px; width: 100px" class="nav-link" href="#">
+                        <div style="margin-top: 0px; border-radius: 10px; height: 130px; width: 100px;" class="border">
+                            <div>
+                                <img style="width: 97px; height: 80px; border-top-left-radius: 10px; border-top-right-radius: 10px"  src="images/person-icon.png"/>
+                            </div>
+                            <div style="margin-top: 15px">
+                                <p>Add history</p>
+                            </div>
+                        </div>
+                    </div>
+                    <% if( posts || posts.length > 0) { %>
+                        <% posts.forEach(post => { %>
+                        <div style="margin-left: 5px; height: 100px; width: 100px" class="nav-link" href="#"><img style="width: 100px; height: 130px; margin: 10px; margin-left: 0px; margin-top: 0px; border-radius: 10px"  src=<%= `./images/uploads/${post.postImage}`  %>  /></div>
+                        <% });
+                    } %>
+                </nav>
+            </div>
+        </section>
+
+        <section role="List Posts">
+            <div role="main">
+                <div class="album py-3 bg-light">
+                    <div>
+                        <div class="row">
+                        <% if (!posts || posts.length == 0) { %>
+                            <h3>No posts to show</h3>
+                        <% } else { posts.forEach((post) => { %>
+                            <div style="margin: 0 auto" class="col-md-8">
+                                <div class="card mb-4 box-shadow">
+                                   <div class="d-flex justify-content align-items-center">
+                                        <img style="margin: 10px;" class="rounded-circle" src="./images/person-icon.png" alt="Generic placeholder image" width="40" height="40">
+                                        <div style="margin-top: 6px;">
+                                            <strong style="margin-right: 5px; margin-top: 10px">Veronica</strong><br>
+                                            <small>8h  •  public</small>
+                                        </div>
+                                    </div>
+                                    <img class="card-img-top" style="border-radius: 0px" src=<%= `/images/uploads/${post.postImage}` %>     alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text"><%= `${post.postText}` %></p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <button style="border-radius: 20px; padding-right: 20px; padding-left: 20px" type="button" class="btn btn-sm "><img style="width:18px; height:18px;" src="./images/icons/gostar.png"/></button>
+                                            <button style="border-radius: 20px; padding-right: 20px; padding-left: 20px" type="button" class="btn btn-sm "><img style="width:18px; height:18px;" src="./images/icons/comment-icon.png"/></button>
+                                            <button style="border-radius: 20px; padding-right: 20px; padding-left: 20px" type="button" class="btn btn-sm "><img style="width:18px; height:18px;" src="./images/icons/share-icon.jpg"/></button>
+                                        </div>
+                                        <div style="margin-top: 15px" class="d-flex justify-content-between">
+                                            <img style="margin-right: 5px;" class="rounded-circle" src="./images/person-icon.png" alt="Generic placeholder image" width="40" height="40">
+                                            <textarea style="border-radius: 20px" id="comment" type="text" class="form-control"  placeholder="write a comment..." rows="1"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) }%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>window.jQuery || document.write('<script src="./javascripts/jquery-slim.min.js"><\/script>')</script>
+        <script src="/javascripts/bootstrap.min.js"></script>
+        <script src="/javascripts/popper.min.js"></script>
+        <script src="/javascripts/holder.min.js"></script>
+        <script src="/javascripts/offcanvas.js"></script>
+    </body>
+</html>
