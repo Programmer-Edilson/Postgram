@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="descriprtion" content="">
+        <meta name="author" content="Programmer-Edilson">
+        <link rel="stylesheet" href="./stylesheets/bootstrap.min.css" />
+        <link rel="stylesheet" href="./stylesheets/navbar.css" />
+        <title><%= title %></title>
+        <style>
+            #image-input, #display-image{
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section>
+            <div role="header">
+                <div style="height: 45px" class="border-bottom d-flex justify-content-between">
+                    <div class="d-flex">
+                        <img onclick="document.getElementById('back-to-feed').click()"  style="margin: 10px; width:24px; height:23px;" src="/images/icons/back-icon.png"/>
+                        <a style="display: none" id="back-to-feed" href="/"></a>
+                        <h6 style="margin-top: 12px;" >Create Post</h6>
+                    </div>
+                    <button style="margin: 10px; margin-top: 5px; font-size: 13px" type="button" class="btn"><strong>Publish</strong></button> 
+                </div>
+            </div>
+
+            <div role="post-owner" class="container">
+                <div class="d-flex justify-content-start">
+                    <div>
+                        <img id="im" style="margin-top: 10px"  class="rounded-circle" src="/images/person-icon.png" width="50px" height="50px">     
+                    </div>
+                    <div style="margin: 10px; margin-top: 0px" class="d-flex flex-column bd-highlight mb-3">
+                        <strong class="p-2 bd-highlight">Veronica</strong>
+                        <small class="btn" style="padding: 0px;font-size: 14; border-radius: 10px; background-color: gray; height: 24px; " >public ...</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <form method="POST" id="fm" action="/publish" enctype="multipart/form-data">
+                    <div class="container" role="post-data">
+                        <textarea name="postText" class="form-control" rows="4" id="ta" required></textarea>
+                    </div>
+
+                    <div id="display-image-div" class="container"  role="display image" style="margin: 10px; margin-left: 0px">
+                        <img width="150px" height="150px" src="" id="display-image" />
+                    </div>
+
+                    <div role="post-data" class="container">
+                        <ul class="navbar-nav mr-auto">
+                            <div class="d-flex justify-content-start" style="margin-top: 10px">
+                                <img name="image" src="/images/icons/image-icon.png" width="20px" height="30px" />
+                                <li id="upload-image" class="nav-item" style="margin: 3px">upload a photo</li>
+                                <input id="image-input" type="file" value="upload image"  name="file">
+                            </div>
+
+                            <div  class="d-flex justify-content-start" style="margin-top: 10px">
+                                <img src="/images/icons/person-icon.png" width="23px" height="30px" />
+                                <li class="nav-item" style="margin: 5px">identify friend</li>
+                            </div>
+                        </ul>
+                        <button  style="margin-top: 20px" id="bbtn" type="submit" class="btn btn-outline-secondary btn-lg btn-block">Publish</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <script>window.jQuery || document.write('<script src="./javascripts/jquery-slim.min.js"><\/script>')</script>
+        <script src="./javascripts/bootstrap.min.js"></script>
+        <script src="./javascripts/popper.min.js"></script>
+        
+        <script>
+
+            $(function(){
+                $("#upload-image").on('click', function(e){
+                    e.preventDefault();
+                    $("#image-input:hidden").trigger('click');
+                });
+            });
+
+            const imageInput = document.querySelector("#image-input");
+            imageInput.addEventListener("change", function() {
+                const reader = new FileReader();
+                reader.addEventListener("load", () => {
+                    const uploadedImage = reader.result;
+                    var displayImage = document.querySelector("#display-image")
+                    displayImage.style.display = "block"; 
+                    displayImage.src = uploadedImage;
+                });
+                reader.readAsDataURL(this.files[0]);
+            });
+
+        </script>
+    </body>
+</html>
+
