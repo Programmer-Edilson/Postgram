@@ -7,14 +7,14 @@ https://socialpostgram.herokuapp.com
 NB: this app is in development and don't implements some of security procedures, so don't share you personal information.
 
 # Features available now
-1 => See home page (feed news)
-2 => publish a post
+1 => See home page (feed news) \n
+2 => publish a post \n
 
 # Installation
-1 => git clone 
-2 => cd Postgram
-3 => npm install
-4 => npm start
+1 => git clone https://github.com/Programmer-Edilson/Postgram.git \n
+2 => cd Postgram \n
+3 => npm install \n
+4 => npm start \n
 
 and now you're live! 
 
