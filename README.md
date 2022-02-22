@@ -1,23 +1,25 @@
 # Postgram
+ [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Programmer-Edilson/Postgram/main/LICENSE) 
+
 This app Joins the best concepts of Instagram and Facebook.
 
 # Demo on heroku
 https://socialpostgram.herokuapp.com
 
-NB: this app is in development and don't implements some of security procedures, so don't share you personal information.
+NB: this app is in development and don't implements some of security procedures, so don't share you personal information. <br/>
 
 # Features available now
-1 => See home page (feed news) \n
-2 => publish a post \n
+1 => See home page (feed news) <br/>
+2 => publish a post <br/>
 
 # Installation
-1 => git clone https://github.com/Programmer-Edilson/Postgram.git \n
-2 => cd Postgram \n
-3 => npm install \n
-4 => npm start \n
+1 => git clone https://github.com/Programmer-Edilson/Postgram.git <br/>
+2 => cd Postgram <br/>
+3 => npm install <br/>
+4 => npm start <br/>
 
 and now you're live! 
-
+# Note
 This project is open to anybody. you are free to contribute you ideas and/or code to make it better.
 
 so let's go!
