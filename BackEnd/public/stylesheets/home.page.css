@@ -1,0 +1,31 @@
+*{
+    color: #ee7752;
+}
+#postext {
+    color: gray;
+}
+#divlogo {
+    margin-top: 8px;
+}
+#textlogo{
+    color: white;
+}
+#proficon, #menuicon {
+    margin: 10px;
+    margin-top: 15px;
+    width: 28px;
+    height: 28px;
+}
+#proficon {
+    margin-right: 0px;
+}
+#menuicon {
+    margin-right: 0px;
+    background-color: white;
+}
+#navicons {
+    margin: 10px; 
+    width:20px; 
+    height:20px;
+}
+

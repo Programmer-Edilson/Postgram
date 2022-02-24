@@ -1,0 +1,45 @@
+#navDiv {
+    height: 150px;
+}
+
+#nav {
+    height: 160px;
+}
+
+#navLink, #addHistoryDiv {
+    width: 100px;
+    height: 100px;
+}
+
+#navLink img {
+    width: 100px;
+    height: 130px;
+    border-radius: 10px;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+#navLink img:hover {
+    transform: scale(1);
+}
+
+#addHistoryDiv {
+    text-align: center;
+}
+
+#addHistoryDiv2 {
+    width: 98px;
+    height: 130px;
+    border-radius: 10px;
+}
+
+#historyProfilePicture {
+    height: 70px;
+    width: 97px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#addHistoryIcon {
+    width: 34px;
+    height: 30px;
+}

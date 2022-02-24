@@ -1,0 +1,46 @@
+#addPostDiv {
+    margin-top: 110px;
+}
+
+#profilePicture{
+    width: 35px;
+    height: 35px;
+}
+
+#addPhotoIcon {
+    width: 28px;
+    height: 39px;
+}
+
+#addPostButton {
+    border-radius: 20px;
+}
+
+#addPostDiv {
+    padding-bottom: 10px;
+}
+
+#addPostItems {
+    padding-top: 10px;
+}
+
+#addPostItem1 {
+    width: 17px;
+    height: 17px;
+    margin-right: 3px;
+}
+
+#addPostItem2 {
+    width: 18px;
+    height: 22px;
+    margin-right: 3px;
+}
+
+#addPostItem3 {
+    width: 17px;
+    height: 18px;
+    margin-right: 3px;
+}
+span {
+    padding-top: 4px;
+}

@@ -1,0 +1,22 @@
+#navBar{
+    padding: 10px;
+}
+
+#profileIcon, #menuIcon {
+    width: 27px;
+    height: 27px;
+    background-color: white;
+}
+
+#profileIcon {
+    margin-right: 5px;
+}
+
+#navIcon {
+    width: 20px;
+    height: 20px;
+}
+
+#navBottom {
+    margin-top: 15px;
+}
